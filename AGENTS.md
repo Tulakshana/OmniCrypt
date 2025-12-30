@@ -4,9 +4,19 @@ This document provides context and guidelines for AI coding assistants working w
 
 ## Project Overview
 
-The app provides a comprehensive solution for encryption in a Flutter app.
+The SDK provides a comprehensive solution for encryption in a Flutter app.
 
 The project is written in Dart and currently supports only Android.
+
+## Repository Structure
+
+```text
+OmniCrypt/
+├── omnicrypt_sdk/lib/              # Dart API
+├── omnicrypt_sdk/android/          # Android native code
+├── omnicrypt_sdk/example/          # Example app
+├── omnicrypt_sdk/test/             # Test directory
+```
 
 ## Development Guidelines
 
