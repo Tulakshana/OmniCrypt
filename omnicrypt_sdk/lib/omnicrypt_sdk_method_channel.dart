@@ -11,28 +11,33 @@ class MethodChannelOmnicryptSdk extends OmnicryptSdkPlatform {
 
   @override
   Future<String> createKey({String? keyId}) async {
-    final result = await methodChannel.invokeMethod<String>(
-      'createKey',
-      {'keyId': keyId},
-    );
+    final result = await methodChannel.invokeMethod<String>('createKey', {
+      'keyId': keyId,
+    });
     return result!;
   }
 
   @override
-  Future<Uint8List> encrypt(Uint8List plaintext, {required String keyId}) async {
-    final result = await methodChannel.invokeMethod<Uint8List>(
-      'encrypt',
-      {'plaintext': plaintext, 'keyId': keyId},
-    );
+  Future<Uint8List> encrypt(
+    Uint8List plaintext, {
+    required String keyId,
+  }) async {
+    final result = await methodChannel.invokeMethod<Uint8List>('encrypt', {
+      'plaintext': plaintext,
+      'keyId': keyId,
+    });
     return result!;
   }
 
   @override
-  Future<Uint8List> decrypt(Uint8List ciphertext, {required String keyId}) async {
-    final result = await methodChannel.invokeMethod<Uint8List>(
-      'decrypt',
-      {'ciphertext': ciphertext, 'keyId': keyId},
-    );
+  Future<Uint8List> decrypt(
+    Uint8List ciphertext, {
+    required String keyId,
+  }) async {
+    final result = await methodChannel.invokeMethod<Uint8List>('decrypt', {
+      'ciphertext': ciphertext,
+      'keyId': keyId,
+    });
     return result!;
   }
 }

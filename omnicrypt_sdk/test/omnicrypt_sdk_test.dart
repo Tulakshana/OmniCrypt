@@ -8,9 +8,9 @@ import 'dart:typed_data';
 class MockOmnicryptSdkPlatform
     with MockPlatformInterfaceMixin
     implements OmnicryptSdkPlatform {
-
   @override
-  Future<String> createKey({String? keyId}) => Future.value(keyId ?? 'mock-key');
+  Future<String> createKey({String? keyId}) =>
+      Future.value(keyId ?? 'mock-key');
 
   @override
   Future<Uint8List> encrypt(Uint8List plaintext, {required String keyId}) =>
@@ -40,7 +40,10 @@ void main() {
     OmnicryptSdkPlatform.instance = fakePlatform;
 
     final plaintext = Uint8List.fromList([1, 2, 3]);
-    expect(await Omnicrypt.encrypt(plaintext, keyId: 'test-key'), Uint8List.fromList([1, 2, 3]));
+    expect(
+      await Omnicrypt.encrypt(plaintext, keyId: 'test-key'),
+      Uint8List.fromList([1, 2, 3]),
+    );
   });
 
   test('decrypt', () async {
@@ -48,6 +51,9 @@ void main() {
     OmnicryptSdkPlatform.instance = fakePlatform;
 
     final ciphertext = Uint8List.fromList([1, 2, 3]);
-    expect(await Omnicrypt.decrypt(ciphertext, keyId: 'test-key'), Uint8List.fromList([4, 5, 6]));
+    expect(
+      await Omnicrypt.decrypt(ciphertext, keyId: 'test-key'),
+      Uint8List.fromList([4, 5, 6]),
+    );
   });
 }

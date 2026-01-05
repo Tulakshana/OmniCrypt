@@ -51,11 +51,16 @@ class _MyHomePageState extends State<MyHomePage> {
         _message = 'Please enter content to encrypt.';
       });
     } else {
-      bool success = await widget.storage.saveText(_keyController.text, _contentController.text);
+      bool success = await widget.storage.saveText(
+        _keyController.text,
+        _contentController.text,
+      );
       _contentController.text = '';
       _keyController.text = '';
       setState(() {
-        _message = success ? 'Content encrypted and saved successfully.' : 'Failed to save content.';
+        _message = success
+            ? 'Content encrypted and saved successfully.'
+            : 'Failed to save content.';
       });
     }
   }
@@ -78,9 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('OmniCrypt Example'),
-      ),
+      appBar: AppBar(title: const Text('OmniCrypt Example')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -109,10 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: _decrypt,
               child: const Text('Decrypt & Retrieve'),
             ),
-            Text( 
-              _message,
-              textAlign: TextAlign.center,
-            ),
+            Text(_message, textAlign: TextAlign.center),
           ],
         ),
       ),

@@ -73,6 +73,7 @@ When assisting with this codebase:
   - Provide clear, actionable error messages
   - try-catch blocks should always catch specific errors. If we are catching an error we should know what.
 - **3rd party packages**: Always try to use Flutter's built-in capabilities
+- **Formatting**: Run `dart format .`
 
 ## Getting Help
 - **Flutter**: https://docs.flutter.dev/
