@@ -8,7 +8,7 @@ OmniCrypt provides a simple, secure API for encrypting and decrypting strings in
 **Currently, OmniCrypt supports Android only.**
 
 ## Features
-- Secure encryption and decryption of strings and files
+- Secure encryption and decryption of strings
 - Key management using Android Keystore
 - Simple Dart API
 - Designed for easy integration into any Flutter app
@@ -38,15 +38,15 @@ import 'package:omnicrypt_sdk/omnicrypt_sdk.dart';
 import 'dart:typed_data';
 
 void main() async {
-  // Create a new key (optional: specify keyId)
-  final keyId = await Omnicrypt.createKey(keyId: 'my-key');
+  // Create a new key
+  await Omnicrypt.createKey(keyId: 'my-key');
 
   // Encrypt data
   final plaintext = Uint8List.fromList('Hello, world!'.codeUnits);
-  final ciphertext = await Omnicrypt.encrypt(plaintext, keyId: keyId);
+  final ciphertext = await Omnicrypt.encrypt(plaintext, keyId: 'my-key');
 
   // Decrypt data
-  final decrypted = await Omnicrypt.decrypt(ciphertext, keyId: keyId);
+  final decrypted = await Omnicrypt.decrypt(ciphertext, keyId: 'my-key');
   print(String.fromCharCodes(decrypted)); // Hello, world!
 }
 ```
