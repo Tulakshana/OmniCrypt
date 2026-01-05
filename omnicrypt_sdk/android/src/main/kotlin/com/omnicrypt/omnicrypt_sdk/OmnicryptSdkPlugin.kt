@@ -36,9 +36,6 @@ class OmnicryptSdkPlugin :
         result: Result
     ) {
         when (call.method) {
-            "getPlatformVersion" -> {
-                result.success("Android ${android.os.Build.VERSION.RELEASE}")
-            }
             "createKey" -> {
                 val keyId = call.argument<String>("keyId") ?: UUID.randomUUID().toString()
                 try {

@@ -8,8 +8,6 @@ import 'dart:typed_data';
 class MockOmnicryptSdkPlatform
     with MockPlatformInterfaceMixin
     implements OmnicryptSdkPlatform {
-  @override
-  Future<String?> getPlatformVersion() => Future.value('42');
 
   @override
   Future<String> createKey({String? keyId}) => Future.value(keyId ?? 'mock-key');

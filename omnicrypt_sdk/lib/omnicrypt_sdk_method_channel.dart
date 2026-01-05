@@ -10,14 +10,6 @@ class MethodChannelOmnicryptSdk extends OmnicryptSdkPlatform {
   final methodChannel = const MethodChannel('omnicrypt_sdk');
 
   @override
-  Future<String?> getPlatformVersion() async {
-    final version = await methodChannel.invokeMethod<String>(
-      'getPlatformVersion',
-    );
-    return version;
-  }
-
-  @override
   Future<String> createKey({String? keyId}) async {
     final result = await methodChannel.invokeMethod<String>(
       'createKey',
