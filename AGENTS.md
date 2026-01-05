@@ -23,7 +23,7 @@ OmniCrypt/
 ### Testing Requirements
 
 - **Mocking**: Use subclasses where required. Do not use 3rd party libraries.
-- **Coverage**: Ensure tests cover both success and failure scenarios.
+- **Coverage**: Ensure tests cover both success and failure scenarios. Every line of code should be covered with a test.
 
 ## Build & Test Commands
 
@@ -68,7 +68,6 @@ When assisting with this codebase:
   - Use consistent error handling strategies.
   - Adhere to established naming conventions and file organization.
   - When adding or modifying code, follow the structure and style of surrounding code to ensure consistency.
-- **Test coverage**: Always include tests for new functionality
 - **Security**: Never compromise security
 - **Error handling**: 
   - Provide clear, actionable error messages
