@@ -1,9 +1,9 @@
 # OmniCrypt
 
-A Flutter SDK for secure encryption and decryption of strings and files on Android devices.
+A Flutter SDK for secure encryption and decryption of strings on Android devices.
 
 ## Overview
-OmniCrypt provides a simple, secure API for encrypting and decrypting data in your Flutter app. It leverages the Android Keystore for key management and AES-GCM for encryption, ensuring sensitive data is protected at rest and in transit.
+OmniCrypt provides a simple, secure API for encrypting and decrypting strings in your Flutter app. It leverages the Android Keystore for key management and AES-GCM for encryption, ensuring sensitive data is protected at rest and in transit.
 
 **Currently, OmniCrypt supports Android only.**
 
